@@ -4,7 +4,7 @@ This repo has my solutions to labs from Sarah and David Harris' _Digital Design 
 
 I won't include the instructions, but you can download them as PDFs from [Elsevier](https://www.elsevier.com/books-and-journals/book-companion/9780128200643).
 
-## Simulation Instructions
+## SystemVerilog Simulation Instructions
 
 To compile and run a file, use the following commands:
 
@@ -18,3 +18,14 @@ If you have gtkwave installed, you can view the waveform with:
 ```bash
 gtkwave thunderbird_tb.vcd
 ```
+
+## Assembly Simulation Instructions
+
+To make and run the assembly files, use the following commands:
+
+```bash
+make TARGET=div9
+./bin/div9
+```
+
+Where "div9" is the name of the file without the `.s` extension.

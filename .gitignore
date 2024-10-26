@@ -1,2 +1,7 @@
+# SystemVerilog
 *.vcd
 *.vvp
+
+# Assembly
+**/bin
+*.o

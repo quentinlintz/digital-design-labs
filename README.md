@@ -6,17 +6,25 @@ I won't include the instructions, but you can download them as PDFs from [Elsevi
 
 ## SystemVerilog Simulation Instructions
 
+Source your Vivado settings:
+
+```bash
+source /tools/Xilinx/Vivado/2024.1/settings64.sh
+```
+
+Change directory into `./SIM`.
 To compile and run a file, use the following commands:
 
 ```bash
-iverilog -g2012 -o thunderbird_tb.vvp thunderbird.sv thunderbird_tb.sv
-vvp thunderbird_tb.vvp
+xvlog --sv ../SRC/thunderbird.sv ../SRC/thunderbird_tb.sv
+xelab -debug typical -top thunderbird_tb -snapshot thunderbird_tb_snapshot
+xsim thunderbird_tb_snapshot --tclbatch xsim_cfg.tcl  
 ```
 
-If you have gtkwave installed, you can view the waveform with:
+To view the waveform:
 
 ```bash
-gtkwave thunderbird_tb.vcd
+xsim --gui thunderbird_tb_snapshot.wdb
 ```
 
 ## Assembly Simulation Instructions

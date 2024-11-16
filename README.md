@@ -37,3 +37,18 @@ make TARGET=div9
 ```
 
 Where "div9" is the name of the file without the `.s` extension.
+
+## C Compilation Instructions
+
+I'm running this code on a [Sparkfun Thing Plus - ESP32-C6](https://www.sparkfun.com/products/22924) which is Espressif so I'm using the `idf.py` tool to build, debug, and flash.
+
+If you want to use [gdbgui](https://www.gdbgui.com/) you need to use Python version 3.11.6.
+
+```bash
+idf.py set-target esp32c6
+idf.py build
+idf.py -p /dev/ttyACM0 flash
+idf.py openocd gdbgui monitor
+```
+
+Hit Ctrl+] to exit the debugger.
